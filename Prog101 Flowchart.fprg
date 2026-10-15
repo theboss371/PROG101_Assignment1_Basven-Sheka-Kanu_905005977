@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Prog101 Flowchart"/>
+        <attribute name="authors" value="USER"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-15 03:06:08 AM"/>
+        <attribute name="created" value="VVNFUjtUSEUtQk9TUy1QQzAwMTsyMDI2LTEwLTE1OzAxOjQ0OjQzIEFNOzI0OTk="/>
+        <attribute name="edited" value="VVNFUjtUSEUtQk9TUy1QQzAwMTsyMDI2LTEwLTE1OzAzOjA2OjA4IEFNOzE7MjYwOA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="location" type="String" array="False" size=""/>
+            <output expression="&quot;Enter waste location&quot;" newline="True"/>
+            <input variable="location"/>
+            <declare name="wasteType" type="String" array="False" size=""/>
+            <output expression="&quot;Enter waste types (Household wastes, plastic, or hazardous watse):&quot;" newline="True"/>
+            <input variable="wasteType"/>
+            <declare name="description" type="String" array="False" size=""/>
+            <output expression="&quot;Enter a description of the waste problem:&quot;" newline="True"/>
+            <input variable="description"/>
+            <while expression="location=&quot;&quot;or wasteType=&quot;&quot;or description=&quot;&quot;">
+                <output expression="&quot;Required information is missing. Please try again.&quot;" newline="True"/>
+                <output expression="&quot;Enter location waste&quot;" newline="True"/>
+                <input variable="location"/>
+                <output expression="&quot;Enter waste type:&quot;" newline="True"/>
+                <input variable="wasteType"/>
+                <output expression="&quot;Enter description:&quot;" newline="True"/>
+                <input variable="description"/>
+            </while>
+            <declare name="reportID" type="String" array="False" size=""/>
+            <assign variable="reportID" expression="&quot;WST-001&quot;"/>
+            <declare name="priority" type="String" array="False" size=""/>
+            <if expression="wasteType = &quot;Hazardous Waste&quot;">
+                <then>
+                    <assign variable="priority" expression="&quot;High&quot;"/>
+                </then>
+                <else>
+                    <assign variable="priority" expression="&quot;Normal&quot;"/>
+                </else>
+            </if>
+            <declare name="status" type="String" array="False" size=""/>
+            <assign variable="status" expression="&quot;Submitted&quot;"/>
+            <output expression="&quot;Report submitted sucessfully. Reference: &quot; &amp; reportID" newline="True"/>
+            <output expression="&quot;Priority: &quot; &amp; priority" newline="True"/>
+            <output expression="&quot;Status: &quot; &amp; status" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
